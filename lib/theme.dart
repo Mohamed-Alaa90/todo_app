@@ -51,5 +51,8 @@ class MyTheme {
         side: BorderSide(color: primaryLightColor, width: 2),
       ),
     ),
+    datePickerTheme: DatePickerThemeData(
+
+    )
   );
 }

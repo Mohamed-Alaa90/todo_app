@@ -25,7 +25,7 @@ class _HomeScreenState extends State<HomeScreen> {
         onPressed: () {
           showModalBottomSheet(
             context: context,
-            builder: (context) => AddTask(),
+            builder: (context) => AddTaskBottomSheet(),
           );
         },
         child: const Icon(
