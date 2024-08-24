@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:todo_app/home/setting_tap/setting_tap.dart';
 import 'package:todo_app/home/task_tap/task_tap.dart';
 import 'package:todo_app/theme.dart';
-import 'package:todo_app/widget/add_task_bottom_Sheet.dart';
+import 'package:todo_app/widget/add_task_bottom_sheet.dart';
 
 class HomeScreen extends StatefulWidget {
   static const String routeName = 'Home_Screen';
@@ -24,8 +24,15 @@ class _HomeScreenState extends State<HomeScreen> {
         backgroundColor: MyTheme.primaryLightColor,
         onPressed: () {
           showModalBottomSheet(
+            isScrollControlled: true,
             context: context,
-            builder: (context) => AddTaskBottomSheet(),
+            builder: (context) => SingleChildScrollView(
+              child: Container(
+                padding: EdgeInsets.only(
+                    bottom: MediaQuery.of(context).viewInsets.bottom),
+                child: AddTaskBottomSheet(),
+              ),
+            ),
           );
         },
         child: const Icon(

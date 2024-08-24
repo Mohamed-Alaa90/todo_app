@@ -1,28 +1,34 @@
 import 'package:flutter/material.dart';
-
 import '../theme.dart';
 
-class ShowTextFromField extends StatelessWidget {
-  ShowTextFromField(
-      {super.key,
-      required this.name,
-      required this.liens,
-      required this.nameValidator});
+class ShowTextFormField extends StatelessWidget {
+  final String name;
+  final int maxLines;
+  final String nameValidator;
+  final Function(String) onChanged;
+  final String initialValue;
 
-  var name = '';
-  var liens = 0;
-  var nameValidator = '';
+  const ShowTextFormField({
+    super.key,
+    required this.name,
+    required this.maxLines,
+    required this.nameValidator,
+    required this.onChanged,
+    this.initialValue = '',
+  });
 
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      initialValue: initialValue,
       validator: (text) {
         if (text == null || text.isEmpty) {
           return nameValidator;
         }
         return null;
       },
-      maxLines: liens,
+      onChanged: onChanged,
+      maxLines: maxLines,
       decoration: InputDecoration(
         labelText: name,
         labelStyle: TextStyle(color: MyTheme.primaryLightColor),

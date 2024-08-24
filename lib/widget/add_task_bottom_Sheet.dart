@@ -3,12 +3,16 @@ import 'package:todo_app/theme.dart';
 import 'package:todo_app/widget/showTextFromField.dart';
 
 class AddTaskBottomSheet extends StatefulWidget {
+  const AddTaskBottomSheet({super.key});
+
   @override
   State<AddTaskBottomSheet> createState() => _AddTaskBottomSheetState();
 }
 
 var selectedDate = DateTime.now();
 var formKey = GlobalKey<FormState>();
+String title = '';
+String description = '';
 
 class _AddTaskBottomSheetState extends State<AddTaskBottomSheet> {
   @override
@@ -28,18 +32,24 @@ class _AddTaskBottomSheetState extends State<AddTaskBottomSheet> {
             const SizedBox(
               height: 15,
             ),
-            ShowTextFromField(
+            ShowTextFormField(
+              onChanged: (p0) {
+                title = p0;
+              },
               nameValidator: 'Please Enter Task Name',
               name: 'Enter Task Name',
-              liens: 1,
+              maxLines: 1,
             ),
             const SizedBox(
               height: 15,
             ),
-            ShowTextFromField(
+            ShowTextFormField(
+              onChanged: (p0) {
+                description = p0;
+              },
               nameValidator: 'Please Enter Task Description',
               name: 'Enter Task Description',
-              liens: 4,
+              maxLines: 4,
             ),
             const SizedBox(
               height: 15,
