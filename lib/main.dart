@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
         initialRoute: HomeScreen.routeName,
-        routes: {HomeScreen.routeName: (context) => HomeScreen()},
+        routes: {HomeScreen.routeName: (context) => const HomeScreen()},
         title: 'To Do',
         theme: MyTheme.lightTheme);
   }

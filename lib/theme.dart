@@ -18,6 +18,7 @@ class MyTheme {
         backgroundColor: primaryLightColor,
       ),
       textTheme: TextTheme(
+      
         bodyLarge: TextStyle(
             color: blackColor, fontSize: 23, fontWeight: FontWeight.bold),
         titleLarge: TextStyle(
@@ -51,5 +52,5 @@ class MyTheme {
           side: BorderSide(color: primaryLightColor, width: 2),
         ),
       ),
-      datePickerTheme: DatePickerThemeData());
+      datePickerTheme: const DatePickerThemeData());
 }

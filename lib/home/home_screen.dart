@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:todo_app/home/setting_tap/setting_tap.dart';
 import 'package:todo_app/home/task_tap/task_tap.dart';
 import 'package:todo_app/theme.dart';
-import 'package:todo_app/widget/add_task_bottom_sheet.dart';
+
+import '../widget/add_task_bottom_Sheet.dart';
 
 class HomeScreen extends StatefulWidget {
   static const String routeName = 'Home_Screen';
@@ -30,7 +31,7 @@ class _HomeScreenState extends State<HomeScreen> {
               child: Container(
                 padding: EdgeInsets.only(
                     bottom: MediaQuery.of(context).viewInsets.bottom),
-                child: AddTaskBottomSheet(),
+                child: const AddTaskBottomSheet(),
               ),
             ),
           );
@@ -70,7 +71,7 @@ class _HomeScreenState extends State<HomeScreen> {
           ],
         ),
       ),
-      body: selectIndex == 0 ? TaskTap() : SettingTap(),
+      body: selectIndex == 0 ? TaskTap() :  SettingTap(),
     );
   }
 }
